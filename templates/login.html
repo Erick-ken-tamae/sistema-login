@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Login</h2>
+
+<form action="/login" method="post">
+
+<input type="text" name="usuario" placeholder="Usuário" required>
+
+<div class="senha-container">
+
+<input type="password" name="senha" id="senha" placeholder="Senha" required>
+
+<span onclick="mostrarSenha()" class="icone">👁️</span>
+
+</div>
+
+<button type="submit">Entrar</button>
+
+</form>
+
+<a href="/cadastro">Criar conta</a>
+
+</div>
+
+<script>
+
+function mostrarSenha(){
+
+    var campo = document.getElementById("senha");
+
+    if(campo.type === "password"){
+        campo.type = "text";
+    }
+    else{
+        campo.type = "password";
+    }
+
+}
+</script>
+</body>
+</html>

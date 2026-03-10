@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Bem vindo {{ usuario }}</h2>
+
+<h3>Usuários cadastrados:</h3>
+
+<ul>
+{% for user in usuarios %}
+<li class="user-item">
+    <span>{{ user[1] }}</span>
+    <a href="/deletar/{{ user[0] }}" class="btn-delete">
+        Deletar</a>
+</li>
+{% endfor %}
+</ul>
+
+<p>Total de usuários: {{ quantidade }}</p>
+
+<a href="/logout">Sair</a>
+
+</div>
+
+</body>
+</html>
