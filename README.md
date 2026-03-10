@@ -1,4 +1,4 @@
-# 🔐 Sistema de Login com Flask
+# 🔐 Sistema de Login
 
 Projeto simples de **autenticação de usuários** desenvolvido com **Python, Flask e SQLite**.
 O sistema permite cadastrar usuários, fazer login, visualizar usuários cadastrados e deletar usuários no dashboard.
@@ -122,7 +122,6 @@ Possíveis melhorias para o sistema:
 Erick Ken Tamae
 
 Estudante de Ciência da Computação
-
 Interesse em desenvolvimento de software, inteligência artificial e sistemas que facilitem o dia a dia das pessoas
-
+LinkedIn: https://www.linkedin.com/in/erick-ken-tamae-479314283/
 ---
