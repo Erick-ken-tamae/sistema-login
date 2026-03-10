@@ -10,12 +10,12 @@ def criar_banco():
     cursor = conn.cursor()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS usuarios(
+    CREATE TABLE IF NOT EXISTS usuarios(           
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         usuario TEXT,
         senha TEXT
     )
-    """)
+    """)   #criar uma tebela de usuario para cadastrar o email e a senha
 
     conn.commit()
     conn.close()
@@ -87,7 +87,7 @@ def registrar():
         return "Usuário já existe"
 #cadastrar novo usuario
     cursor.execute(
-        "INSERT INTO usuarios (usuario, senha) VALUES (?,?)",
+        "INSERT INTO usuarios (usuario, senha) VALUES (?,?)",  #Esse comando faz o usuario cadastrar(o SENHA e o EMAIL)
         (usuario, senha)
     )
 
@@ -111,7 +111,7 @@ def dashboard():
         )
         usuarios = cursor.fetchall()
         
-        quantidade = len(usuarios)
+        quantidade = len(usuarios) #ele lê a quantidade de usuario cadastrado 
         conn.close()
         return render_template(
             "dashboard.html", 
@@ -124,11 +124,12 @@ def dashboard():
 #Deletar o usuário
 @app.route("/deletar/<int:id>")
 def deletar(id):
-    conn = sqlite3.connect("database.db")
+    conn = sqlite3.connect("database.db") #conecta no database(conecta no banco de dados)
     cursor = conn.cursor()
     
-    cursor.execute(
-        "DELETE FROM usuarios WHERE id=?",
+
+    cursor.execute(     
+        "DELETE FROM usuarios WHERE id=?", #comando delete para deletar o email
         (id,)
     )
     
